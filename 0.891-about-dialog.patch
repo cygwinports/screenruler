@@ -1,0 +1,27 @@
+--- origsrc/screenruler/screenruler.glade	2010-02-23 23:21:24.000000000 -0600
++++ src/screenruler/screenruler.glade	2010-02-24 00:02:23.922878300 -0600
+@@ -781,11 +781,23 @@
+   </child>
+ 
+   <child>
+-    <widget class="GtkMenuItem" id="about1">
++    <widget class="GtkImageMenuItem" id="about1">
+       <property name="visible">True</property>
+       <property name="label" translatable="yes">_About</property>
+       <property name="use_underline">True</property>
+       <signal name="activate" handler="on_about_activate" last_modification_time="Sun, 19 Sep 2004 23:54:17 GMT"/>
++
++      <child internal-child="image">
++	<widget class="GtkImage" id="image115">
++	  <property name="visible">True</property>
++	  <property name="stock">gtk-about</property>
++	  <property name="icon_size">1</property>
++	  <property name="xalign">0.5</property>
++	  <property name="yalign">0.5</property>
++	  <property name="xpad">0</property>
++	  <property name="ypad">0</property>
++	</widget>
++      </child>
+     </widget>
+   </child>
+ 

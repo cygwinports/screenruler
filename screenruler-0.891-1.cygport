@@ -1,0 +1,33 @@
+BZR_URI="lp:screenruler"
+BZR_REV=25
+inherit bzr ruby
+
+DESCRIPTION="GNOME Screen Ruler"
+HOMEPAGE="http://gnomecoder.wordpress.com/screenruler/"
+
+PATCH_URI="0.891-about-dialog.patch"
+
+src_compile() { :; }
+src_test() { :; }
+
+src_install() {
+	cd ${S}
+
+	insinto /usr/share/${PN}
+	doins *.rb *.glade *.png
+
+	insinto /usr/share/${PN}/utils
+	doins utils/*.rb
+
+	dodir /usr/bin
+	echo -e "#!/bin/sh\nexec ${RUBY} /usr/share/${PN}/${PN}.rb $@" > ${D}/usr/bin/${PN}
+	chmod +x ${D}/usr/bin/${PN}
+
+	for i in 16x16 32x32 64x64
+	do
+		insinto /usr/share/icons/hicolor/${i}/apps
+		newins ${PN}-icon-${i}.png ${PN}.png
+	done
+
+	make_desktop_entry ${PN} "Screen Ruler" ${PN} "Graphics;GTK"
+}
