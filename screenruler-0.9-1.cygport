@@ -1,5 +1,5 @@
 BZR_URI="lp:screenruler"
-BZR_REV=25
+BZR_REV=27
 inherit bzr ruby
 
 DESCRIPTION="GNOME Screen Ruler"
