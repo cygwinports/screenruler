@@ -1,5 +1,5 @@
 category: Graphics
-requires: ruby ruby-cairo ruby-gconf2 ruby-gdk_pixbuf2 ruby-glib2 ruby-gtk2 ruby-libglade2
+requires: ruby ruby-cairo ruby-gtk2
 sdesc: "GTK+ screen ruler"
 ldesc: "ScreenRuler lets you measure objects on your screen using six 
 different metrics: pixels, centimeters, inches, picas, points, and as a 

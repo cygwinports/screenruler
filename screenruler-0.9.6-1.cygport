@@ -1,11 +1,9 @@
-BZR_URI="lp:screenruler"
-BZR_REV=27
-inherit bzr ruby
+inherit ruby
 
 DESCRIPTION="GNOME Screen Ruler"
 HOMEPAGE="http://gnomecoder.wordpress.com/screenruler/"
-
-PATCH_URI="0.891-about-dialog.patch"
+SRC_URI="http://launchpad.net/screenruler/trunk/${PV}/+download/${P}.tar.gz"
+SRC_DIR=${PN}
 
 src_compile() { :; }
 src_test() { :; }
