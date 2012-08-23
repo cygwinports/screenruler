@@ -1,0 +1,71 @@
+--- origsrc/screenruler/preferences_window.glade	2011-11-18 20:17:09.000000000 -0600
++++ src/screenruler/preferences_window.glade	2012-08-23 15:18:07.413670900 -0500
+@@ -12,7 +12,7 @@
+   <object class="GtkWindow" id="preferences_window">
+     <property name="can_focus">False</property>
+     <property name="border_width">6</property>
+-    <property name="title" translatable="yes">Settings</property>
++    <property name="title" translatable="yes">Preferences</property>
+     <property name="resizable">False</property>
+     <property name="window_position">center</property>
+     <property name="icon_name">gtk-preferences</property>
+--- origsrc/screenruler/ruler_popup_menu.glade	2011-11-15 07:16:21.000000000 -0600
++++ src/screenruler/ruler_popup_menu.glade	2012-08-23 15:09:58.917730500 -0500
+@@ -6,12 +6,12 @@
+     <property name="can_focus">False</property>
+     <child>
+       <object class="GtkImageMenuItem" id="preferences">
+-        <property name="label" translatable="yes">_Settings</property>
++        <property name="label">gtk-preferences</property>
+         <property name="visible">True</property>
+         <property name="can_focus">False</property>
+         <property name="use_action_appearance">False</property>
+         <property name="use_underline">True</property>
+-        <property name="use_stock">False</property>
++        <property name="use_stock">True</property>
+         <signal name="activate" handler="on_preferences_activate" swapped="no"/>
+       </object>
+     </child>
+@@ -135,21 +135,23 @@
+       </object>
+     </child>
+     <child>
+-      <object class="GtkMenuItem" id="help_menuitem">
++      <object class="GtkImageMenuItem" id="help_menuitem">
+         <property name="visible">True</property>
+         <property name="can_focus">False</property>
+         <property name="use_action_appearance">False</property>
+-        <property name="label" translatable="yes">_Help</property>
++        <property name="label">gtk-help</property>
++        <property name="use_stock">True</property>
+         <property name="use_underline">True</property>
+         <signal name="activate" handler="on_help_menuitem_activate" swapped="no"/>
+       </object>
+     </child>
+     <child>
+-      <object class="GtkMenuItem" id="about1">
++      <object class="GtkImageMenuItem" id="about1">
+         <property name="visible">True</property>
+         <property name="can_focus">False</property>
+         <property name="use_action_appearance">False</property>
+-        <property name="label" translatable="yes">_About</property>
++        <property name="label">gtk-about</property>
++        <property name="use_stock">True</property>
+         <property name="use_underline">True</property>
+         <signal name="activate" handler="on_about_activate" swapped="no"/>
+       </object>
+@@ -162,12 +164,12 @@
+     </child>
+     <child>
+       <object class="GtkImageMenuItem" id="quit">
+-        <property name="label" translatable="yes">_Quit</property>
++        <property name="label">gtk-quit</property>
+         <property name="visible">True</property>
+         <property name="can_focus">False</property>
+         <property name="use_action_appearance">False</property>
+         <property name="use_underline">True</property>
+-        <property name="use_stock">False</property>
++        <property name="use_stock">True</property>
+         <signal name="activate" handler="on_quit_activate" swapped="no"/>
+       </object>
+     </child>

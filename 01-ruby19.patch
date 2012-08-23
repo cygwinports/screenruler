@@ -1,0 +1,12 @@
+CWD was dropped from $LOAD_PATH in 1.9.2
+
+--- origsrc/screenruler/screenruler.rb	2011-11-18 20:13:00.000000000 -0600
++++ src/screenruler/screenruler.rb	2012-08-23 14:55:13.295075800 -0500
+@@ -20,6 +20,7 @@
+  ###############################################################################
+ 
+ Dir.chdir(File.dirname(File.expand_path(File.symlink?(__FILE__) ? File.readlink(__FILE__) : __FILE__)))		# So that this file can be run from anywhere
++$LOAD_PATH << '.'
+ $LOAD_PATH << './utils'
+ 
+ require 'gettext'		# Internationalization Support
