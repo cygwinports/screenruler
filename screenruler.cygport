@@ -1,0 +1,42 @@
+inherit ruby
+
+NAME="screenruler"
+VERSION=0.9.6
+RELEASE=2
+CATEGORY="Graphics"
+SUMMARY="GTK+ Screen Ruler"
+DESCRIPTION="ScreenRuler lets you measure objects on your screen using six
+different metrics: pixels, centimeters, inches, picas, points, and as a
+percentage of the ruler's length."
+HOMEPAGE="http://gnomecoder.wordpress.com/screenruler/"
+SRC_URI="http://launchpad.net/screenruler/trunk/${VERSION}/+download/${NAME}-${VERSION}.tar.gz"
+SRC_DIR=${NAME}
+PATCH_URI="
+	01-ruby19.patch
+	02-has-resize-grip.patch
+	03-stock-icons.patch
+"
+
+src_compile() { :; }
+
+src_install() {
+	cd ${S}
+
+	insinto /usr/share/${NAME}
+	doins *.rb *.glade *.png
+
+	insinto /usr/share/${NAME}/utils
+	doins utils/*.rb
+
+	dodir /usr/bin
+	echo -e "#!/bin/sh\nexec ${RUBY} /usr/share/${NAME}/${NAME}.rb \"\$@\"" > ${D}/usr/bin/${NAME}
+	chmod +x ${D}/usr/bin/${NAME}
+
+	for i in 16x16 32x32 64x64
+	do
+		insinto /usr/share/icons/hicolor/${i}/apps
+		newins ${NAME}-icon-${i}.png ${NAME}.png
+	done
+
+	make_desktop_entry ${NAME} "Screen Ruler" ${NAME} "Graphics;GTK"
+}
