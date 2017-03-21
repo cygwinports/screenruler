@@ -2,7 +2,7 @@ inherit ruby
 
 NAME="screenruler"
 VERSION=0.9.6
-RELEASE=2
+RELEASE=3
 CATEGORY="Graphics"
 SUMMARY="GTK+ Screen Ruler"
 DESCRIPTION="ScreenRuler lets you measure objects on your screen using six
@@ -16,6 +16,8 @@ PATCH_URI="
 	02-has-resize-grip.patch
 	03-stock-icons.patch
 "
+
+ARCH=noarch
 
 src_compile() { :; }
 
