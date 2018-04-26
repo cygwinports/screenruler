@@ -2,7 +2,7 @@ inherit ruby
 
 NAME="screenruler"
 VERSION=0.9.6
-RELEASE=3
+RELEASE=4
 CATEGORY="Graphics"
 SUMMARY="GTK+ Screen Ruler"
 DESCRIPTION="ScreenRuler lets you measure objects on your screen using six
@@ -12,7 +12,8 @@ HOMEPAGE="http://gnomecoder.wordpress.com/screenruler/"
 SRC_URI="http://launchpad.net/screenruler/trunk/${VERSION}/+download/${NAME}-${VERSION}.tar.gz"
 SRC_DIR=${NAME}
 PATCH_URI="
-	01-ruby19.patch
+	https://src.fedoraproject.org/cgit/rpms/screenruler.git/plain/screenruler-ruby19.patch
+	https://src.fedoraproject.org/cgit/rpms/screenruler.git/plain/screenruler-ruby25-loop.patch
 	02-has-resize-grip.patch
 	03-stock-icons.patch
 "
